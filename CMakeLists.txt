@@ -37,6 +37,10 @@ message(STATUS "Use LD script: " ${TARGET_LD_SCRIPT})
 add_library(N32G031_SDK STATIC ${TARGET_C_SOURCES} ${TARGET_STARTUP_ASM})
 
 # Shared sources, includes and definitions
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    target_compile_definitions(N32G031_SDK PUBLIC USE_FULL_ASSERT)
+    message(STATUS "Building N32G031_SDK in Debug mode")
+endif ()
 target_compile_definitions(N32G031_SDK PUBLIC ${TARGET_C_DEFINES})
 target_include_directories(N32G031_SDK
         SYSTEM PUBLIC ${TARGET_C_INCLUDES}
