@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.13)
 
 set(N32G031_CMSIS_PATH CMSIS)
 set(N32G031_PERIPHERAL_PATH n32g031_std_periph_driver)
@@ -49,3 +49,5 @@ target_link_options(N32G031_SDK
         PUBLIC "-Wl,-Map=${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.map,--cref"
 )
 target_compile_options(N32G031_SDK PRIVATE -w)
+
+target_link_libraries(BSP_LIB INTERFACE N32G031_SDK)
