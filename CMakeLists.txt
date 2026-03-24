@@ -48,7 +48,7 @@ target_include_directories(N32G031_SDK
 )
 
 target_link_directories(N32G031_SDK PUBLIC ${TARGET_LIB_DIRECTORIES})
-target_link_libraries(N32G031_SDK PUBLIC "c" "m" "nosys")
+target_link_libraries(N32G031_SDK PUBLIC "c" "m")
 target_link_options(N32G031_SDK
         PUBLIC "-Wl,-Map=${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.map,--cref"
 )
