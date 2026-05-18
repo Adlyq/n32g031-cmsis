@@ -24,11 +24,6 @@ set(TARGET_LIB_DIRECTORIES
         ${N32G031_PERIPHERAL_PATH}/inc
 )
 
-if (NOT TARGET_STARTUP_ASM)
-    message(FATAL_ERROR "Must set TARGET_STARTUP_ASM to locate startup asm")
-endif ()
-message(STATUS "Use startup asm: " ${TARGET_STARTUP_ASM})
-
 if (NOT TARGET_LD_SCRIPT)
     message(FATAL_ERROR "Must set TARGET_LD_SCRIPT to locate ld script")
 endif ()
